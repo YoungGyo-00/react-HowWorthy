@@ -15,6 +15,6 @@ const StyledButton = styled.button`
   background: ${palette.yellow[0]};
 `;
 
-const button = (props) => <StyledButton {...props} />;
+const Button = (props) => <StyledButton {...props} />;
 
-export default button;
+export default Button;
