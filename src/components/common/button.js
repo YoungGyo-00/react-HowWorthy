@@ -6,13 +6,16 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 4px;
   font-size: 1rem;
-  font-wight: bold;
-  padding: 0.25rem 1rem;
+  font-weight: bold;
+  padding: 0.25rem 1rem; // 위아래, 왼쪽오른쪽
   color: black;
   outline: none;
   cursor: pointer;
 
-  background: ${palette.yellow[0]};
+  background-color: ${palette.yellow[0]};
+  &:hover {
+    background-color: ${palette.gray[0]};
+  }
 `;
 
 const Button = (props) => <StyledButton {...props} />;
