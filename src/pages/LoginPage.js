@@ -1,5 +1,6 @@
 import React from 'react';
 import LoginForm from 'src/components/login/LoginForm';
+import LoginViewer from 'src/components/login/LoginViewer';
 import palette from 'src/styles/palette';
 import { styled } from 'styled-components';
 
@@ -11,7 +12,7 @@ const LoginTemplateBlock = styled.div`
   width: 100%;
   height: 96vh;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: flex-start;
   box-sizing: border-box;
   overflow: hidden;
@@ -20,6 +21,7 @@ const LoginTemplateBlock = styled.div`
 const LoginPage = () => {
   return (
     <LoginTemplateBlock>
+      <LoginViewer />
       <LoginForm />
     </LoginTemplateBlock>
   );
