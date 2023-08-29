@@ -1,22 +1,36 @@
 import React from 'react';
 import palette from 'src/styles/palette';
 import styled from 'styled-components';
-import AuthForm from './AuthForm';
+import { Link } from 'react-router-dom';
+import Button from '../common/Button';
 
-const AuthTemplateBlock = styled.div`
-  position: relative;
-  padding: 0;
-  background: ${palette.white[0]};
-  display: flex;
-  width: 100%;
-  height: 96vh;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  box-sizing: border-box;
-  overflow: hidden;
+const Form = styled.form`
+  text-align: center;
 `;
 
+const Title = styled.div`
+  margin: 0;
+  color: ${palette.black[0]};
+  width: fit-content;
+  margin-bottom: 5px;
+  margin-left: 5px;
+`;
+
+const StyledInput = styled.input`
+  font-size: 1rem;
+  border-radius: 10px;
+  width: 95%;
+  height: 4vh;
+  margin-bottom: 1rem;
+`;
+
+const Footer = styled.div`
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+  color: ${palette.gray[1]};
+`;
 const LoginBox = styled.div`
   .title-area {
     display: block;
@@ -36,12 +50,24 @@ const LoginBox = styled.div`
 
 const AuthTemplate = ({ children }) => {
   return (
-    <AuthTemplateBlock>
-      <LoginBox>
-        <div className="title-area">Welcome back!</div>
-        <AuthForm />
-      </LoginBox>
-    </AuthTemplateBlock>
+    <LoginBox>
+      <div className="title-area">Welcome back!</div>
+      <Form>
+        <Title>Your Email</Title>
+        <StyledInput name="username" placeholder=" example@gmail.com" />
+        <Title>Your Password</Title>
+        <StyledInput name="password" placeholder=" password" />
+        <Link to="/post">
+          <Button>Log In</Button>
+        </Link>
+      </Form>
+      <Footer>
+        <div>Are you new here? Join our service!</div>
+        <Link to="/register">
+          <Button>Sign up for free</Button>
+        </Link>
+      </Footer>
+    </LoginBox>
   );
 };
 
