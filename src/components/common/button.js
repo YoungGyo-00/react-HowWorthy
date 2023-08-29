@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import palette from '../../styles/palette';
 
 const StyledButton = styled.button`
@@ -11,11 +11,21 @@ const StyledButton = styled.button`
   color: black;
   outline: none;
   cursor: pointer;
+  border-radius: 10px;
 
   background-color: ${palette.yellow[0]};
   &:hover {
     background-color: ${palette.gray[0]};
   }
+
+  ${(props) =>
+    props.gray &&
+    css`
+      background-color: ${palette.gray[0]};
+      &:hover {
+        background-color: ${palette.yellow[0]};
+      }
+    `}
 `;
 
 const Button = (props) => <StyledButton {...props} />;
