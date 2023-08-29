@@ -1,13 +1,8 @@
 import React from 'react';
-import Button from '../components/common/Button';
+import AuthTemplate from 'src/components/auth/AuthTemplate';
 
 const LoginPage = () => {
-  return (
-    <>
-      <div>로그인 페이지</div>
-      <Button>Log In</Button>
-    </>
-  );
+  return <AuthTemplate></AuthTemplate>;
 };
 
 export default LoginPage;
