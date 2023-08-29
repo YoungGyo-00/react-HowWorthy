@@ -48,7 +48,7 @@ const LoginBox = styled.div`
   height: 50%;
 `;
 
-const AuthTemplate = ({ children }) => {
+const LoginForm = ({ children }) => {
   return (
     <LoginBox>
       <div className="title-area">Welcome back!</div>
@@ -71,4 +71,4 @@ const AuthTemplate = ({ children }) => {
   );
 };
 
-export default AuthTemplate;
+export default LoginForm;

@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthTemplate from 'src/components/auth/AuthTemplate';
+import LoginForm from 'src/components/login/LoginForm';
 import palette from 'src/styles/palette';
 import { styled } from 'styled-components';
 
@@ -20,7 +20,7 @@ const LoginTemplateBlock = styled.div`
 const LoginPage = () => {
   return (
     <LoginTemplateBlock>
-      <AuthTemplate />
+      <LoginForm />
     </LoginTemplateBlock>
   );
 };
