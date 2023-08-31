@@ -1,7 +1,7 @@
 import React from 'react';
-import LoginForm from 'src/components/login/LoginForm';
+import LoginForm from 'src/app/login/components/LoginForm';
 import LoginViewer from 'src/components/login/LoginViewer';
-import palette from 'src/styles/palette';
+import palette from 'src/utils/palette';
 import { styled } from 'styled-components';
 
 const LoginTemplateBlock = styled.div`

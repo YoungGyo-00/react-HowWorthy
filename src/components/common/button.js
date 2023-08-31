@@ -1,11 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import palette from '../../styles/palette';
+import palette from '../../utils/palette';
 
 const StyledButton = styled.button`
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 0.25rem 1rem; // 위아래, 왼쪽오른쪽
   color: black;

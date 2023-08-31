@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import palette from 'src/styles/palette';
+import palette from 'src/utils/palette';
 import Login_Picture1 from '../../assets/login/Login_Picture1.png';
 import Login_Picture2 from '../../assets/login/Login_Picture2.png';
 import Login_Star1 from '../../assets/login/Login_Star1.png';
