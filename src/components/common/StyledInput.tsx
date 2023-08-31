@@ -26,10 +26,12 @@ const StyledInput = ({
   name: string;
   placeholder: string;
 }) => {
-  <>
-    <Title>{title}</Title>
-    <Input name={name} placeholder={placeholder} />
-  </>;
+  return (
+    <>
+      <Title>{title}</Title>
+      <Input name={name} placeholder={placeholder} />
+    </>
+  );
 };
 
 export default StyledInput;

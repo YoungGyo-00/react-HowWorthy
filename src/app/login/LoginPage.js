@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from 'src/app/login/components/LoginForm';
-import LoginViewer from 'src/components/login/LoginViewer';
+import LoginViewer from 'src/app/login/components/LoginViewer';
 import palette from 'src/utils/palette';
 import { styled } from 'styled-components';
 

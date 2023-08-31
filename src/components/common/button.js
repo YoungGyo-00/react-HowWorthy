@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import palette from '../../utils/palette';
+import palette from 'src/utils/palette';
 
 const StyledButton = styled.button`
   border: none;

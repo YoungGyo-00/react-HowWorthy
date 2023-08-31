@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import PostPage from './pages/PostPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import RatingPage from './pages/RatingPage';
+import PostPage from './app/post/PostPage';
+import LoginPage from './app/login/LoginPage';
+import RegisterPage from './app/register/RegisterPage';
+import RatingPage from './app/rating/RatingPage';
 
 const App = () => {
   return (

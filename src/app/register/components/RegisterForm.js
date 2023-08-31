@@ -41,15 +41,11 @@ const LoginForm = () => {
       <div className="title-area">Welcome back!</div>
       <Form>
         <StyledInput
-          title="Your Email"
+          title="Email"
           name="username"
           placeholder=" example@gmail.com"
         />
-        <StyledInput
-          title="Your Password"
-          name="password"
-          placeholder=" password"
-        />
+        <StyledInput title="Password" name="password" placeholder=" password" />
         <Link to="/post">
           <Button>Log In</Button>
         </Link>

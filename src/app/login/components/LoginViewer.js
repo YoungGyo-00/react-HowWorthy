@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import palette from 'src/utils/palette';
-import Login_Picture1 from '../../assets/login/Login_Picture1.png';
-import Login_Picture2 from '../../assets/login/Login_Picture2.png';
-import Login_Star1 from '../../assets/login/Login_Star1.png';
-import Login_Star2 from '../../assets/login/Login_Star2.png';
+import Login_Picture1 from 'src/assets/login/Login_Picture1.png';
+import Login_Picture2 from 'src/assets/login/Login_Picture2.png';
+import Login_Star1 from 'src/assets/login/Login_Star1.png';
+import Login_Star2 from 'src/assets/login/Login_Star2.png';
 
 const LoginViewerBlock = styled.div`
   .title {
@@ -28,27 +28,27 @@ const LoginViewerBlock = styled.div`
 const ImageGroup = styled.image`
   .picture1 {
     height: 23vh;
-    position: absolute;
     border-radius: 2rem;
     margin-top: 7vh;
+    position: absolute;
   }
   .picture2 {
     height: 23vh;
-    position: absolute;
     border-radius: 2rem;
     margin-left: 45vh;
     margin-top: 17vh;
+    position: absolute;
   }
   .star1 {
     height: 20vh;
-    position: absolute;
     margin-left: 23vh;
+    position: absolute;
   }
   .star2 {
     height: 20vh;
-    position: absolute;
     margin-left: 7vh;
     margin-top: 30vh;
+    position: absolute;
   }
   margin-top: 2vh;
 `;
