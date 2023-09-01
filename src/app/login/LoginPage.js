@@ -5,7 +5,7 @@ import { PageTemplateBlock } from 'src/components/common/PageTemplateBlock';
 
 const LoginPage = () => {
   return (
-    <PageTemplateBlock flex_direction="row">
+    <PageTemplateBlock flex_direction="row" justify_content="space-around">
       <LoginViewer />
       <LoginForm />
     </PageTemplateBlock>

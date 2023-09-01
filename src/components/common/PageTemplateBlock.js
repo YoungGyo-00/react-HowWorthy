@@ -9,7 +9,7 @@ export const PageTemplateBlock = styled.div`
   width: 100%;
   height: 96vh;
   flex-direction: ${(props) => props.flex_direction};
-  justify-content: space-around;
+  justify-content: ${(props) => props.justify_content};
   align-items: flex-start;
   box-sizing: border-box;
   overflow: hidden;
