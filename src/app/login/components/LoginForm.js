@@ -28,7 +28,7 @@ const Form = styled.form`
 `;
 
 const Footer = styled.div`
-  margin-top: 2rem;
+  margin-top: 1.3rem;
   text-align: center;
   font-size: 0.7rem;
   line-height: 1.5rem;
