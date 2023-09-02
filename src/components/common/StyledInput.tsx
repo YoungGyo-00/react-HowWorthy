@@ -6,7 +6,7 @@ const Title = styled.div`
   color: ${palette.black[0]};
   width: fit-content;
   margin-bottom: 5px;
-  margin-left: 1vh;
+  margin-left: 12px;
 `;
 
 const Input = styled.input`
@@ -15,6 +15,12 @@ const Input = styled.input`
   width: 95%;
   height: 1.5rem;
   margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.25rem;
+  text-align: left;
+  background-color: ${palette.yellow[2]};
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const StyledInput = ({

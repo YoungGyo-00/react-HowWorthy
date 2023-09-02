@@ -26,6 +26,12 @@ const StyledButton = styled.button`
         background-color: ${palette.yellow[0]};
       }
     `}
+
+  ${(props) =>
+    props.margin_top &&
+    css`
+      margin-top: ${props.margin_top};
+    `}
 `;
 
 const Button = (props) => <StyledButton {...props} />;
