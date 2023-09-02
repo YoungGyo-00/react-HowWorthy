@@ -40,16 +40,8 @@ const LoginForm = () => {
     <LoginBox>
       <div className="title-area">Welcome back!</div>
       <Form>
-        <StyledInput
-          title="Your Email"
-          name="username"
-          placeholder=" example@gmail.com"
-        />
-        <StyledInput
-          title="Your Password"
-          name="password"
-          placeholder=" password"
-        />
+        <StyledInput title="Your Email" name="username" />
+        <StyledInput title="Your Password" name="password" />
         <Link to="/post">
           <Button>Log In</Button>
         </Link>
