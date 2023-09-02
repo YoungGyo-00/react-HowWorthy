@@ -3,27 +3,39 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from '../../../components/common/Button';
 import StyledInput from 'src/components/common/StyledInput';
-import palette from 'src/utils/palette';
 
-const RegisterViewerBlock = styled.div`
+const RegisterFormBlock = styled.div`
   display: flex;
-  justify-content: flex-start;
-  color: ${palette.black[0]};
-  text-align: left;
   position: relative;
-  flex-direction: row;
+  justify-content: flex-start;
+  flex-direction: column;
 `;
 
 const Form = styled.form`
   text-align: center;
   width: 450px;
-  margin-top: 3rem;
-  margin-left: 4rem;
+  margin-top: 4rem;
+  margin-left: 8rem;
 `;
 
-const LoginForm = () => {
+const Title = styled.div`
+  margin-top: 3rem;
+  margin-left: 5rem;
+  font-weight: 600;
+  font-size: 60px;
+`;
+
+const Content = styled.div`
+  margin-left: 5rem;
+  font-weight: 500;
+  font-size: 40px;
+`;
+
+const RegisterForm = () => {
   return (
-    <RegisterViewerBlock>
+    <RegisterFormBlock>
+      <Title>Welcome to How Worthy!</Title>
+      <Content>Create Account</Content>
       <Form>
         <StyledInput title="Nickname" name="nickname" />
         <StyledInput title="Email" name="email" />
@@ -33,8 +45,8 @@ const LoginForm = () => {
           <Button margin_top="2rem">Sign Up</Button>
         </Link>
       </Form>
-    </RegisterViewerBlock>
+    </RegisterFormBlock>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;

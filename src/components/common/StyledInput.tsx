@@ -23,19 +23,11 @@ const Input = styled.input`
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-const StyledInput = ({
-  title,
-  name,
-  placeholder,
-}: {
-  title: string;
-  name: string;
-  placeholder: string;
-}) => {
+const StyledInput = ({ title, name }: { title: string; name: string }) => {
   return (
     <>
       <Title>{title}</Title>
-      <Input name={name} placeholder={placeholder} />
+      <Input name={name} />
     </>
   );
 };
