@@ -1,7 +1,14 @@
 import React from 'react';
+import { PageTemplateBlock } from 'src/components/common/PageTemplateBlock';
+import { Header } from 'src/components/common/Header';
+import { styled } from 'styled-components';
 
 const RatingPage = () => {
-  return <div>인스타 별점 페이지</div>;
+  return (
+    <PageTemplateBlock flex_direction="column" justify_content="flex-start">
+      <Header />
+    </PageTemplateBlock>
+  );
 };
 
 export default RatingPage;

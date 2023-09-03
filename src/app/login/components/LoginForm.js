@@ -16,19 +16,20 @@ const LoginBox = styled.div`
   }
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
-  height: 50%;
+  width: 400px;
+  height: 450px;
   padding: 2rem;
   background-color: ${palette.yellow[1]};
   margin-top: 18vh;
-  flex-basis: 25%;
 `;
 
 const Form = styled.form`
   text-align: center;
+  margin-top: 2rem;
 `;
 
 const Footer = styled.div`
-  margin-top: 1.3rem;
+  margin-top: 3.5rem;
   text-align: center;
   font-size: 0.7rem;
   line-height: 1.5rem;
