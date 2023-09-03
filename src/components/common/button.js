@@ -18,10 +18,32 @@ const StyledButton = styled.button`
           margin-top: ${props.margin_top};
           margin-left: ${props.margin_left};
           position: absolute;
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 
           background-color: ${palette.gray[0]};
           &:hover {
             background-color: ${palette.yellow[0]};
+          }
+        `;
+
+      case 'yellow':
+        return css`
+          border: none;
+          border-radius: 2rem;
+          font-size: 28px;
+          font-weight: 400;
+          padding: 0.3rem 4rem; // 위아래, 왼쪽오른쪽
+          color: black;
+          outline: none;
+          cursor: pointer;
+          margin-top: ${props.margin_top};
+          margin-left: ${props.margin_left};
+          position: absolute;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+          background-color: ${palette.yellow[0]};
+          &:hover {
+            background-color: ${palette.gray[0]};
           }
         `;
 
@@ -48,6 +70,7 @@ const StyledButton = styled.button`
           cursor: pointer;
           border-radius: 10px;
           margin-top: ${props.margin_top};
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 
           background-color: ${palette.yellow[0]};
           &:hover {
