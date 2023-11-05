@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Post_Box from 'src/assets/post/Post_Box.png';
 import Post_Emoticon from 'src/assets/post/Post_Emoticon.png';
@@ -25,17 +25,74 @@ const ImageGroup = styled.image`
     margin-top: 24.5rem;
     margin-left: 4rem;
   }
+  .picture {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    margin-left: 40rem;
+    margin-top: 2rem;
+  }
   margin-top: 2rem;
 `;
 
 const PostImageGroup = () => {
+  const fileInputRef = useRef(null);
+  const [imageFile, setImageFile] = useState(null); // 올린 파일을 저장하는 state
+  const handleClickFileInput = () => {
+    fileInputRef.current.click();
+  };
+
+  // 업로드 파일이 바뀔 때마다 이벤트 발생
+  const uploadProfile = (e) => {
+    const fileList = e.target.files;
+    // const length = fileList.length;
+    if (fileList && fileList[0]) {
+      const url = URL.createObjectURL(fileList[0]);
+
+      setImageFile({
+        file: fileList[0],
+        thumbnail: url,
+        type: fileList[0].type.slice(0, 5),
+      });
+    }
+  };
+
+  const showImage = useMemo(() => {
+    if (!imageFile && imageFile == null) {
+      return (
+        <>
+          <img className="emoticon" src={Post_Emoticon} alt="Emoticon" />
+          <Button
+            color="gray"
+            margin_top="13rem"
+            margin_left="41rem"
+            onClick={handleClickFileInput}
+          >
+            Choose Files
+          </Button>
+          <input
+            type="file"
+            ref={fileInputRef}
+            style={{ display: 'none' }}
+            onChange={uploadProfile}
+          ></input>
+        </>
+      );
+    }
+    return (
+      <img
+        className="picture"
+        src={imageFile.thumbnail}
+        alt={imageFile.type}
+        onClick={handleClickFileInput}
+      />
+    );
+  }, [imageFile]);
+
   return (
     <ImageGroup>
       <img className="box" src={Post_Box} alt="Box" />
-      <img className="emoticon" src={Post_Emoticon} alt="Emoticon" />
-      <Button color="gray" margin_top="13rem" margin_left="41rem">
-        Choose Files
-      </Button>
+      {showImage}
       <Button color="none" margin_top="18rem" margin_left="42.3rem">
         Or Drop Files Here
       </Button>
