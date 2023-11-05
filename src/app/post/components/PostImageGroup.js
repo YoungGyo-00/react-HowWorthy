@@ -45,7 +45,6 @@ const PostImageGroup = () => {
   // 업로드 파일이 바뀔 때마다 이벤트 발생
   const uploadProfile = (e) => {
     const fileList = e.target.files;
-    // const length = fileList.length;
     if (fileList && fileList[0]) {
       const url = URL.createObjectURL(fileList[0]);
 
@@ -57,8 +56,13 @@ const PostImageGroup = () => {
     }
   };
 
+  const deleteFileImage = () => {
+    URL.revokeObjectURL(imageFile);
+    setImageFile('');
+  };
+
   const showImage = useMemo(() => {
-    if (!imageFile && imageFile == null) {
+    if (!imageFile || imageFile == null) {
       return (
         <>
           <img className="emoticon" src={Post_Emoticon} alt="Emoticon" />
@@ -93,7 +97,12 @@ const PostImageGroup = () => {
     <ImageGroup>
       <img className="box" src={Post_Box} alt="Box" />
       {showImage}
-      <Button color="none" margin_top="18rem" margin_left="42.3rem">
+      <Button
+        color="none"
+        margin_top="18rem"
+        margin_left="42.3rem"
+        onClick={deleteFileImage}
+      >
         Or Drop Files Here
       </Button>
       <Button color="gray" margin_top="24rem" margin_left="40.7rem">
