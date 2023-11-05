@@ -55,7 +55,7 @@ const RedirectURI = (onDataReceived) => {
     } catch (error) {
       console.error('서버로 코드 전송 중 에러 발생:', error);
     } finally {
-      console.log('끝');
+      console.log('여기인가?끝');
     }
   };
 

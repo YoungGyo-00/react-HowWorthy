@@ -3,6 +3,7 @@ const palette = {
   gray: ['#A7A497', '#7A7A7A', '#A7A497'],
   white: ['#FFFFFF'],
   black: ['#000000'],
+  green: ['#03C75A'],
 };
 
 export default palette;
