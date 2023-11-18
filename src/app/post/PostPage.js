@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageTemplateBlock } from 'src/components/common/PageTemplateBlock';
 import { Header } from 'src/components/common/Header';
 import { styled } from 'styled-components';

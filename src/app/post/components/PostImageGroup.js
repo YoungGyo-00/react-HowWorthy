@@ -1,8 +1,10 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Post_Box from 'src/assets/post/Post_Box.png';
 import Post_Emoticon from 'src/assets/post/Post_Emoticon.png';
 import Button from 'src/components/common/Button';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const ImageGroup = styled.image`
   .emoticon {
@@ -37,7 +39,10 @@ const ImageGroup = styled.image`
 
 const PostImageGroup = () => {
   const fileInputRef = useRef(null);
+  const navigate = useNavigate();
   const [imageFile, setImageFile] = useState(null); // 올린 파일을 저장하는 state
+  const [s3ImageUrl, setS3ImageUrl] = useState(null);
+
   const handleClickFileInput = () => {
     fileInputRef.current.click();
   };
@@ -60,6 +65,60 @@ const PostImageGroup = () => {
     URL.revokeObjectURL(imageFile);
     setImageFile('');
   };
+
+  const upload = async () => {
+    try {
+      const formData = new FormData();
+
+      formData.append('file', imageFile.file);
+
+      console.log(imageFile.file);
+
+      const response = await axios.post(
+        'http://3.35.110.165:8080/upload',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        },
+      );
+
+      setS3ImageUrl(response.data);
+    } catch (error) {
+      console.error('서버로 코드 전송 중 에러 발생:', error);
+    } finally {
+      console.log('업로드 코드 완료');
+    }
+  };
+
+  const ranking = async () => {
+    try {
+      const response = await axios.post(
+        'http://3.35.110.165:5000/evaluate_image',
+        { image_url: s3ImageUrl },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      );
+
+      navigate('/rating', { response: response, image_url: s3ImageUrl });
+    } catch (error) {
+      console.error('서버로 코드 전송 중 에러 발생: ', error);
+    } finally {
+      console.log('이미지 분석 완료');
+    }
+  };
+  useEffect(() => {
+    console.log(s3ImageUrl);
+
+    if (s3ImageUrl) {
+      console.log('test', imageFile);
+      navigate('/rating', { state: { imageFile } });
+    }
+  }, [s3ImageUrl]);
 
   const showImage = useMemo(() => {
     if (!imageFile || imageFile == null) {
@@ -105,7 +164,12 @@ const PostImageGroup = () => {
       >
         Or Drop Files Here
       </Button>
-      <Button color="gray" margin_top="24rem" margin_left="40.7rem">
+      <Button
+        color="gray"
+        margin_top="24rem"
+        margin_left="40.7rem"
+        onClick={upload}
+      >
         Get Feedback
       </Button>
     </ImageGroup>

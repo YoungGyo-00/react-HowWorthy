@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import LoginViewer from 'src/app/login/components/LoginViewer';
 import { PageTemplateBlock } from 'src/components/common/PageTemplateBlock';
+import { Link } from 'react-router-dom';
 import NaverLogin from './components/NaverLogin';
 import RedirectURI from './components/RedirectURI';
 
@@ -9,7 +10,7 @@ const LoginPage = () => {
   const [authCode, setAuthCode] = useState(null);
 
   useEffect(() => {
-    setIsLoggedIn(!!authCode);
+    setIsLoggedIn(!authCode);
   }, [authCode]);
 
   const handleDataAndCode = (responseData, code) => {
@@ -39,11 +40,27 @@ const LoginPage = () => {
     }
   };
 
+  const showButton = useMemo(() => {
+    if (!authCode || authCode == null) {
+      return (
+        <>
+          <RedirectURI onDataReceived={handleDataAndCode} />
+          <NaverLogin />
+        </>
+      );
+    }
+
+    return (
+      <Link to="/post">
+        <button>test</button>
+      </Link>
+    );
+  }, [isLoggedIn]);
+
   return (
     <PageTemplateBlock flex_direction="row" justify_content="space-around">
       <LoginViewer />
-      <RedirectURI onDataReceived={handleDataAndCode} />
-      <NaverLogin />
+      {showButton}
     </PageTemplateBlock>
   );
 };

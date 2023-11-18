@@ -51,11 +51,11 @@ const RedirectURI = (onDataReceived) => {
       );
       console.log(response.data);
       setData(response.data);
-      onDataReceived(response.data, access);
+      onDataReceived(data, access);
     } catch (error) {
       console.error('서버로 코드 전송 중 에러 발생:', error);
     } finally {
-      console.log('여기인가?끝');
+      console.log('member access token 마무리');
     }
   };
 
