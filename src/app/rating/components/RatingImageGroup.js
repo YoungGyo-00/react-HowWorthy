@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import Rating_Box from 'src/assets/rating/Rating_Box.png';
 import Rating_Picture from 'src/assets/rating/Rating_Picture.png';
+import test from 'src/assets/rating/test.png';
 import Button from 'src/components/common/Button';
 
 import { useLocation } from 'react-router-dom';
@@ -42,9 +43,12 @@ const ImageGroup = styled.image`
     z-index: 2;
   }
   .chart {
+    width: 280px;
+    height: 200px;
     position: absolute;
     z-index: 99;
-    margin-left: 41rem;
+    margin-top: 3rem;
+    margin-left: 42.5rem;
   }
   margin-top: 3rem;
   margin-left: 10rem;
@@ -103,6 +107,7 @@ const RatingImageGroup = () => {
           src={state.imageFile.thumbnail}
           alt={state.imageFile.type}
         />
+        <img className="chart" src={test} alt="test" />
         <Radar className="chart" data={data} options={option} />
 
         <Button
