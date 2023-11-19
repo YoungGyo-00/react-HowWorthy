@@ -54,11 +54,10 @@ const TextGroup = styled.div`
 `;
 
 const ChartStyle = styled.div`
-  width: 400px;
-  height: 300px;
+  height: 380px;
   position: absolute;
   z-index: 99;
-  margin-top: 8rem;
+  margin-top: 9rem;
   margin-left: 52rem;
 `;
 
